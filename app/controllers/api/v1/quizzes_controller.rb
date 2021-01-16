@@ -1,11 +1,11 @@
-class QuizzesController < ApplicationController
+class Api::V1::QuizzesController < ApplicationController
   before_action :set_quiz, only: [:show, :edit, :update, :destroy]
 
   # GET /quizzes
   # GET /quizzes.json
   def index
     @quizzes = Quiz.all
-
+    render json: QuizSerializer.new(@quizzes, options).serialized_json
   end
 
   # GET /quizzes/1
@@ -13,7 +13,7 @@ class QuizzesController < ApplicationController
   def show
     @quiz = Quiz.find(params[:id])
 
-  
+    render json: QuizSerializer.new(@quiz, options).serialized_json
   end
 
   # GET /quizzes/new

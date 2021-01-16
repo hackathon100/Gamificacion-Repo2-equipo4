@@ -1,15 +1,20 @@
-class QuestionsController < ApplicationController
+class Api::V1::QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    questions = Question.all
+
+    render json: QuestionSerializer.new(questions).serialized_json
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @questions_by_quiz = Question.where(quiz_id: params[:quiz_id])
+
+    render json: QuestionSerializer.new(@questions_by_quiz).serialized_json
   end
 
   # GET /questions/new
