@@ -6,7 +6,7 @@ class QuizSerializer
   has_many :questions
   set_type :quiz
 
-  attribute :category_id do |quiz|
+  attribute :category_name do |quiz|
     category_name(quiz)
   end
 end
