@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teacher: MyString
+  grade: MyString
+  subject: MyString
+  category: one
+
+two:
+  teacher: MyString
+  grade: MyString
+  subject: MyString
+  category: two
