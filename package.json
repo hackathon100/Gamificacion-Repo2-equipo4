@@ -2,8 +2,12 @@
   "name": "mingapp",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "5.2.1",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.2"
   }
 }
