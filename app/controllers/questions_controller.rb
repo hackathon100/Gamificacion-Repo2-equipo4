@@ -10,9 +10,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
-    @questions_by_quiz = Question.where(quiz_id: params[:quiz_id])
-
-    render json: QuestionSerializer.new(@questions_by_quiz).serialized_json
+    @question=Question.find(params[:id])
   end
 
   # GET /questions/new
@@ -74,4 +72,5 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:question, :correct_answer, :incorrect_answers, :quiz_id)
     end
+
 end
