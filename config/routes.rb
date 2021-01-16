@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :questions, param: :quiz_id
     end
   end
+  root 'quizzes#index'
   resources :quizzes, param: :id
   resources :questions
 
