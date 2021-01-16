@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     end
   end
   resources :quizzes, param: :id
+  resources :questions, param: :quiz_id
 
 end
